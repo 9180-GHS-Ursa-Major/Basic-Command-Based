@@ -1,11 +1,11 @@
 package frc.robot.Commands.AutoCommands;
 
 import edu.wpi.first.wpilibj.Timer;
-import edu.wpi.first.wpilibj2.command.CommandBase;
+import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.Subsystems.DrivetrainSubsystem;
 
 //Drive backwards for two seconds, see DriveFWDCommand for commented code - this follows the same idea
-public class DriveBCKCommand extends CommandBase {
+public class DriveBCKCommand extends Command {
     @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
     private final DrivetrainSubsystem drivetrainSubsystem;
 
