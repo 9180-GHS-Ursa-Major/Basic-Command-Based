@@ -26,13 +26,8 @@ public class DrivetrainSubsystem extends SubsystemBase {
     CANSparkMax frontRightMotor = new CANSparkMax(DriveConstants.kRM1, MotorType.kBrushed);
     CANSparkMax backRightMotor = new CANSparkMax(DriveConstants.kRM2, MotorType.kBrushed);
 
-    //Declaring groups of two motor controllers:
-    MotorControllerGroup left = new MotorControllerGroup(frontLeftMotor, backLeftMotor);
-    MotorControllerGroup right = new MotorControllerGroup(frontRightMotor, backRightMotor);
-    //Front to back doesn't matter, you can adjust for this later in your code.  I like to do front first, then back.
-
     //Declaring a differential drive - this will allow the robot to drive
-    DifferentialDrive drive = new DifferentialDrive(left, right);
+    DifferentialDrive drive = new DifferentialDrive(frontLeftMotor, backRightMotor);
     //Here the left size has to be first, then the right
 
     //This creates a drivetrain subsystem and will run the code inside at at the start
@@ -46,7 +41,7 @@ public class DrivetrainSubsystem extends SubsystemBase {
         backRightMotor.restoreFactoryDefaults();
 
         //This part here sets the back motor to follow the front motor
-        //Once again, safeguarding the robot from problems, though I wouldn't comment this out
+        //This replaces the old MotorControllerGroup class, and is therefore necessary for drivetrains with more than two motors
         backLeftMotor.follow(frontLeftMotor);
         backRightMotor.follow(frontRightMotor);
 
