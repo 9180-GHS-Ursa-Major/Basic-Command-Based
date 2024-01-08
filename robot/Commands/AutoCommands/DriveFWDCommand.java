@@ -1,11 +1,11 @@
 package frc.robot.Commands.AutoCommands;
 
 import edu.wpi.first.wpilibj.Timer;
-import edu.wpi.first.wpilibj2.command.CommandBase;
+import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.Subsystems.DrivetrainSubsystem;
 
 //This will drive the robot forward for two seconds at 50% speed
-public class DriveFWDCommand extends CommandBase {
+public class DriveFWDCommand extends Command {
     @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
     //Once again subsystem that command is using
     private final DrivetrainSubsystem drivetrainSubsystem;
