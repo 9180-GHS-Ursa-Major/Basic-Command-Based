@@ -1,10 +1,10 @@
 package frc.robot.Commands.DriveCommands;
 
-import edu.wpi.first.wpilibj2.command.CommandBase;
+import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.RobotContainer;
 import frc.robot.Subsystems.DrivetrainSubsystem;
 
-public class DriveWithJoystick extends CommandBase {
+public class DriveWithJoystick extends Command {
    //I honestly have no idea what it is but it's here and important
    @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
    //Calls on the subsystem that the command uses
